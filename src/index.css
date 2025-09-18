@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neo-Brutalist Memphis Cyberpunk Design System */
+
+@layer base {
+  :root {
+    /* Core palette - Cyberpunk neons with brutal contrast */
+    --background: 0 0% 97%;
+    --foreground: 0 0% 8%;
+
+    /* Card system - Bold Memphis inspired */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --card-hover: 195 100% 50%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Primary - Electric Cyan */
+    --primary: 195 100% 50%;
+    --primary-foreground: 0 0% 8%;
+    --primary-glow: 195 100% 70%;
+
+    /* Secondary - Hot Pink */
+    --secondary: 320 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 320 100% 80%;
+
+    /* Accent - Neon Green */
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 8%;
+    --accent-glow: 120 100% 70%;
+
+    /* Warning - Electric Yellow */
+    --warning: 60 100% 50%;
+    --warning-foreground: 0 0% 8%;
+
+    /* Destructive - Neon Red */
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Muted - Brutalist grays */
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 30%;
+
+    /* Borders and inputs */
+    --border: 0 0% 20%;
+    --input: 0 0% 95%;
+    --ring: 195 100% 50%;
+
+    /* Brutalist radius */
+    --radius: 0.25rem;
+
+    /* Cyberpunk gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-neon: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--warning)));
+    --gradient-brutal: linear-gradient(90deg, hsl(var(--foreground)), hsl(var(--muted-foreground)));
+
+    /* Shadows with neon glow */
+    --shadow-neon: 0 0 20px hsl(var(--primary) / 0.5);
+    --shadow-brutal: 8px 8px 0px hsl(var(--foreground));
+    --shadow-memphis: 4px 4px 0px hsl(var(--secondary));
+
+    /* Animation timings */
+    --transition-brutal: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Even more cyberpunk */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --border: 0 0% 80%;
+    --input: 0 0% 12%;
+    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.8);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  /* Cyberpunk glitch effect */
+  .glitch {
+    position: relative;
+    color: hsl(var(--primary));
+    font-weight: 900;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .glitch::before {
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+    color: hsl(var(--secondary));
+    z-index: -1;
+  }
+
+  .glitch::after {
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
+    color: hsl(var(--accent));
+    z-index: -2;
+  }
+
+  @keyframes glitch-anim {
+    0% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.85deg); }
+    5% { clip: rect(12px, 9999px, 59px, 0); transform: skew(0.93deg); }
+    10% { clip: rect(70px, 9999px, 05px, 0); transform: skew(-0.85deg); }
+    15% { clip: rect(25px, 9999px, 99px, 0); transform: skew(0.26deg); }
+    20% { clip: rect(55px, 9999px, 16px, 0); transform: skew(-0.12deg); }
+    25% { clip: rect(96px, 9999px, 62px, 0); transform: skew(0.37deg); }
+    30% { clip: rect(82px, 9999px, 27px, 0); transform: skew(0.15deg); }
+    35% { clip: rect(28px, 9999px, 35px, 0); transform: skew(-0.98deg); }
+    40% { clip: rect(21px, 9999px, 81px, 0); transform: skew(0.81deg); }
+    45% { clip: rect(67px, 9999px, 40px, 0); transform: skew(0.39deg); }
+    50% { clip: rect(18px, 9999px, 93px, 0); transform: skew(-0.6deg); }
+    55% { clip: rect(67px, 9999px, 73px, 0); transform: skew(0.4deg); }
+    60% { clip: rect(99px, 9999px, 17px, 0); transform: skew(0.13deg); }
+    65% { clip: rect(86px, 9999px, 74px, 0); transform: skew(-0.42deg); }
+    70% { clip: rect(34px, 9999px, 43px, 0); transform: skew(-0.69deg); }
+    75% { clip: rect(29px, 9999px, 88px, 0); transform: skew(0.77deg); }
+    80% { clip: rect(5px, 9999px, 26px, 0); transform: skew(-0.83deg); }
+    85% { clip: rect(47px, 9999px, 98px, 0); transform: skew(-0.32deg); }
+    90% { clip: rect(53px, 9999px, 32px, 0); transform: skew(0.18deg); }
+    95% { clip: rect(13px, 9999px, 85px, 0); transform: skew(-0.45deg); }
+    100% { clip: rect(87px, 9999px, 29px, 0); transform: skew(-0.01deg); }
+  }
+
+  @keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); transform: skew(0.2deg); }
+    20% { clip: rect(40px, 9999px, 30px, 0); transform: skew(-0.4deg); }
+    40% { clip: rect(20px, 9999px, 99px, 0); transform: skew(0.8deg); }
+    60% { clip: rect(75px, 9999px, 15px, 0); transform: skew(-0.5deg); }
+    80% { clip: rect(10px, 9999px, 85px, 0); transform: skew(0.3deg); }
+    100% { clip: rect(50px, 9999px, 45px, 0); transform: skew(-0.1deg); }
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+
+  /* Pulse neon */
+  .pulse-neon {
+    animation: pulse-neon 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-neon {
+    from { box-shadow: var(--shadow-neon); }
+    to { box-shadow: 0 0 40px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--secondary) / 0.4); }
+  }
+
+  /* Brutal hover */
+  .brutal-hover {
+    transition: var(--transition-brutal);
+    transform: translateY(0px);
+    box-shadow: var(--shadow-brutal);
+  }
+
+  .brutal-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 12px 12px 0px hsl(var(--foreground));
+  }
+
+  /* Memphis shapes */
+  .memphis-shape {
+    position: absolute;
+    animation: memphis-float 8s ease-in-out infinite;
+  }
+
+  @keyframes memphis-float {
+    0%, 100% { transform: rotate(0deg) translateY(0px); }
+    25% { transform: rotate(90deg) translateY(-20px); }
+    50% { transform: rotate(180deg) translateY(10px); }
+    75% { transform: rotate(270deg) translateY(-10px); }
+  }
+
+  /* Color changing */
+  .color-shift {
+    animation: color-shift 4s ease-in-out infinite;
+  }
+
+  @keyframes color-shift {
+    0% { background: hsl(var(--primary)); }
+    25% { background: hsl(var(--secondary)); }
+    50% { background: hsl(var(--accent)); }
+    75% { background: hsl(var(--warning)); }
+    100% { background: hsl(var(--primary)); }
+  }
+}
