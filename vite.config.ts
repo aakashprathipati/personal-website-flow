@@ -5,7 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/personal-website-flow/" : "/",
+  // Use env-driven base so Netlify (root path) and GitHub Pages (subpath) both work
+  base: process.env.VITE_BASE ?? "/",
   server: {
     host: "::",
     port: 8080,
