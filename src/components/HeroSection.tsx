@@ -73,11 +73,8 @@ const HeroSection = () => {
               </div>
 
               <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                Crafting cutting-edge digital experiences with{' '}
-                <span className="text-primary font-bold">AI,Web3</span>,{' '}
-                <span className="text-secondary font-bold">Data Science</span>, and{' '}
-                <span className="text-accent font-bold">Modern Web Technologies</span>.
-                Transforming complex problems into elegant solutions.
+                Building secure, high‑performance software with <span className="text-primary font-bold">AI</span>,{' '}
+                <span className="text-secondary font-bold">Web3</span>, and analytics—clean architecture, real impact.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 pt-2">
