@@ -32,7 +32,9 @@ const AnimatedBackground = () => {
       const colors = ['primary', 'secondary', 'accent', 'warning'];
       const shapes: ('circle' | 'square' | 'triangle' | 'diamond')[] = ['circle', 'square', 'triangle', 'diamond'];
 
-      for (let i = 0; i < 80; i++) {
+      // Same particle count for mobile and desktop for consistent experience
+      const particleCount = 80;
+      for (let i = 0; i < particleCount; i++) {
         newParticles.push({
           id: i,
           x: Math.random() * window.innerWidth,
@@ -60,8 +62,18 @@ const AnimatedBackground = () => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 0) {
+        setMousePosition({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
   }, []);
 
   // Draw connections on canvas
@@ -72,8 +84,13 @@ const AnimatedBackground = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const updateCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    updateCanvasSize();
+    window.addEventListener('resize', updateCanvasSize);
 
     const drawConnections = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -115,6 +132,10 @@ const AnimatedBackground = () => {
     };
 
     drawConnections();
+
+    return () => {
+      window.removeEventListener('resize', updateCanvasSize);
+    };
   }, [particles, connections, mousePosition]);
 
   useEffect(() => {

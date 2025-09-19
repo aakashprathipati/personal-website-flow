@@ -58,7 +58,7 @@ const FloatingNav = () => {
       <div className="fixed top-6 right-6 z-50 lg:hidden">
         <Button
           size="icon"
-          className="w-14 h-14 brutal-hover bg-primary text-primary-foreground shadow-neon"
+          className="w-14 h-14 brutal-hover bg-primary text-primary-foreground shadow-neon border border-primary/30"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -66,8 +66,8 @@ const FloatingNav = () => {
       </div>
 
       {/* Desktop Floating Nav - horizontal top bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 hidden lg:flex items-center justify-center bg-transparent">
-        <div className="flex flex-row gap-1.5 p-1.5">
+      <nav className="fixed top-0 left-0 right-0 z-50 hidden lg:flex items-center justify-center bg-transparent pt-4">
+        <div className="flex flex-row gap-1.5 p-1.5 bg-background/10 backdrop-blur-md border border-primary/20 rounded-full shadow-neon">
           {navItems.map((item, index) => {
             const IconComponent = item.icon;
             const isActive = activeSection === item.href.replace('#', '');
@@ -105,8 +105,8 @@ const FloatingNav = () => {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
-          <div className="absolute inset-0 bg-background/90 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
-          <div className="absolute top-24 right-6 bg-card border-2 border-foreground shadow-brutal p-6 rounded-lg">
+          <div className="absolute inset-0 bg-background/20 backdrop-blur-md" onClick={() => setIsOpen(false)} />
+          <div className="absolute top-24 right-6 bg-card/90 backdrop-blur-md border-2 border-primary/30 shadow-neon p-6 rounded-lg">
             <div className="flex flex-col gap-4">
               {navItems.map((item, index) => {
                 const IconComponent = item.icon;
