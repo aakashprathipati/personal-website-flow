@@ -94,7 +94,7 @@ const HeroSection = () => {
                   className="brutal-hover border-2 border-foreground font-bold px-6"
                   asChild
                 >
-                  <a href={`/aakash-resume.pdf?v=${Date.now()}`} download="Aakash_Prathipati_Resume.pdf">
+                  <a href={`/aakashp-resume.pdf?v=${Date.now()}`} download="Aakash_Prathipati_Resume.pdf">
                     <Download className="w-4 h-4 mr-2" />
                     DOWNLOAD CV
                   </a>
