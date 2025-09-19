@@ -6,63 +6,67 @@
 
 @layer base {
   :root {
-    /* Core palette - Cyberpunk neons with brutal contrast */
-    --background: 0 0% 97%;
-    --foreground: 0 0% 8%;
+    /* Core palette - Dark Cyberpunk */
+    --background: 240 5% 6%;
+    --foreground: 0 0% 95%;
 
-    /* Card system - Bold Memphis inspired */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 8%;
+    /* Card system - Dark cyberpunk inspired */
+    --card: 240 8% 10%;
+    --card-foreground: 0 0% 95%;
     --card-hover: 195 100% 50%;
 
     /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 8%;
+    --popover: 240 8% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Primary - Electric Cyan */
+    /* Primary - Electric Blue */
     --primary: 195 100% 50%;
-    --primary-foreground: 0 0% 8%;
+    --primary-foreground: 240 5% 6%;
     --primary-glow: 195 100% 70%;
 
     /* Secondary - Hot Pink */
-    --secondary: 320 100% 60%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 320 100% 80%;
+    --secondary: 330 100% 60%;
+    --secondary-foreground: 240 5% 6%;
+    --secondary-glow: 330 100% 80%;
 
-    /* Accent - Neon Green */
-    --accent: 120 100% 50%;
-    --accent-foreground: 0 0% 8%;
-    --accent-glow: 120 100% 70%;
+    /* Accent - Electric Yellow */
+    --accent: 54 100% 62%;
+    --accent-foreground: 240 5% 6%;
+    --accent-glow: 54 100% 82%;
 
     /* Warning - Electric Yellow */
-    --warning: 60 100% 50%;
-    --warning-foreground: 0 0% 8%;
+    --warning: 54 100% 62%;
+    --warning-foreground: 240 5% 6%;
 
     /* Destructive - Neon Red */
     --destructive: 0 100% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Muted - Brutalist grays */
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 30%;
+    /* Muted - Dark grays */
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 3% 70%;
 
     /* Borders and inputs */
-    --border: 0 0% 20%;
-    --input: 0 0% 95%;
+    --border: 240 4% 25%;
+    --input: 240 6% 12%;
     --ring: 195 100% 50%;
 
-    /* Brutalist radius */
-    --radius: 0.25rem;
+    /* Cyberpunk radius */
+    --radius: 0.5rem;
 
     /* Cyberpunk gradients */
     --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-neon: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--warning)));
     --gradient-brutal: linear-gradient(90deg, hsl(var(--foreground)), hsl(var(--muted-foreground)));
+    --gradient-radial: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.1) 0%, transparent 70%);
 
-    /* Shadows with neon glow */
-    --shadow-neon: 0 0 20px hsl(var(--primary) / 0.5);
-    --shadow-brutal: 8px 8px 0px hsl(var(--foreground));
+    /* Enhanced neon shadows */
+    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.3);
+    --shadow-brutal: 8px 8px 0px hsl(var(--foreground) / 0.8);
     --shadow-memphis: 4px 4px 0px hsl(var(--secondary));
+    --shadow-glow-primary: 0 0 40px hsl(var(--primary) / 0.8);
+    --shadow-glow-secondary: 0 0 40px hsl(var(--secondary) / 0.8);
+    --shadow-glow-accent: 0 0 40px hsl(var(--accent) / 0.8);
 
     /* Animation timings */
     --transition-brutal: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -87,18 +91,18 @@
   }
 
   .dark {
-    /* Dark mode - Even more cyberpunk */
-    --background: 0 0% 5%;
+    /* Keep the same dark cyberpunk theme for consistency */
+    --background: 240 5% 6%;
     --foreground: 0 0% 95%;
-    --card: 0 0% 8%;
+    --card: 240 8% 10%;
     --card-foreground: 0 0% 95%;
-    --popover: 0 0% 8%;
+    --popover: 240 8% 10%;
     --popover-foreground: 0 0% 95%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
-    --border: 0 0% 80%;
-    --input: 0 0% 12%;
-    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.8);
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 3% 70%;
+    --border: 240 4% 25%;
+    --input: 240 6% 12%;
+    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.3);
   }
 }
 
@@ -110,6 +114,10 @@
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.05) 0%, transparent 50%), 
+                radial-gradient(circle at 80% 20%, hsl(var(--secondary) / 0.05) 0%, transparent 50%), 
+                radial-gradient(circle at 40% 80%, hsl(var(--accent) / 0.05) 0%, transparent 50%),
+                hsl(var(--background));
   }
 
   /* Cyberpunk glitch effect */
@@ -232,5 +240,41 @@
     50% { background: hsl(var(--accent)); }
     75% { background: hsl(var(--warning)); }
     100% { background: hsl(var(--primary)); }
+  }
+
+  /* Particle connection lines */
+  .particle-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    transform-origin: left center;
+    animation: pulse-line 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-line {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+
+  /* Morphing shapes */
+  .morph-shape {
+    animation: morph 8s ease-in-out infinite;
+  }
+
+  @keyframes morph {
+    0%, 100% { border-radius: 50%; transform: rotate(0deg) scale(1); }
+    25% { border-radius: 0%; transform: rotate(90deg) scale(1.2); }
+    50% { border-radius: 25%; transform: rotate(180deg) scale(0.8); }
+    75% { border-radius: 10%; transform: rotate(270deg) scale(1.1); }
+  }
+
+  /* Interactive glow */
+  .interactive-glow {
+    transition: all 0.3s ease;
+  }
+
+  .interactive-glow:hover {
+    box-shadow: var(--shadow-glow-primary);
+    transform: scale(1.05);
   }
 }
