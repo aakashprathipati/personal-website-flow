@@ -46,7 +46,7 @@ const certifications = [
 
 const EducationSection = () => {
   return (
-    <section className="py-24 bg-muted/30 relative overflow-hidden">
+    <section className="py-24 bg-muted/30 relative overflow-visible lg:overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 border-4 border-primary/20 rotate-45 animate-float" />

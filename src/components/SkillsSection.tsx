@@ -57,7 +57,7 @@ const SkillsSection = () => {
   const [hoveredSkill, setHoveredSkill] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-24 bg-background relative overflow-visible lg:overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse" />

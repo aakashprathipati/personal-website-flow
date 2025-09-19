@@ -21,7 +21,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-background relative overflow-hidden">
+    <section id="experience" className="py-20 bg-background relative overflow-visible lg:overflow-hidden">
       {/* Memphis background elements */}
       <div className="absolute top-10 left-10 w-20 h-20 bg-primary opacity-10 rotate-45" />
       <div className="absolute top-32 right-20 w-16 h-16 bg-secondary opacity-15 rounded-full" />

@@ -16,7 +16,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-visible lg:overflow-hidden bg-background">
       {/* Animated Memphis shapes */}
       <div className="absolute inset-0 pointer-events-none">
         <div 

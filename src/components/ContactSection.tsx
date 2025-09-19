@@ -56,7 +56,7 @@ const ContactSection = () => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-24 bg-background relative overflow-visible lg:overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full opacity-5">
