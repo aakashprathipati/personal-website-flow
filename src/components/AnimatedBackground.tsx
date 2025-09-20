@@ -101,6 +101,17 @@ const AnimatedBackground = () => {
     updateCanvasSize();
     window.addEventListener('resize', updateCanvasSize);
 
+    // Color mapping for canvas (canvas doesn't understand CSS variables)
+    const getParticleColor = (colorName: string) => {
+      switch(colorName) {
+        case 'primary': return '195, 100%, 50%';
+        case 'secondary': return '330, 100%, 60%';
+        case 'accent': return '54, 100%, 62%';
+        case 'warning': return '54, 100%, 62%';
+        default: return '195, 100%, 50%';
+      }
+    };
+
     const drawConnections = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -109,12 +120,13 @@ const AnimatedBackground = () => {
         if (particle.trail.length > 1) {
           for (let i = 0; i < particle.trail.length - 1; i++) {
             const trailOpacity = (i / particle.trail.length) * 0.3 * particle.glowIntensity;
+            const particleColorHSL = getParticleColor(particle.color);
             const gradient = ctx.createLinearGradient(
               particle.trail[i].x, particle.trail[i].y,
               particle.trail[i + 1].x, particle.trail[i + 1].y
             );
-            gradient.addColorStop(0, `hsla(var(--${particle.color}), ${trailOpacity})`);
-            gradient.addColorStop(1, `hsla(var(--${particle.color}), ${trailOpacity * 0.5})`);
+            gradient.addColorStop(0, `hsla(${particleColorHSL}, ${trailOpacity})`);
+            gradient.addColorStop(1, `hsla(${particleColorHSL}, ${trailOpacity * 0.5})`);
             
             ctx.strokeStyle = gradient;
             ctx.lineWidth = particle.size * 0.3;
@@ -162,6 +174,7 @@ const AnimatedBackground = () => {
         if (distance < 200) {
           const opacity = (200 - distance) / 200;
           const energyLevel = particle.energy / 100;
+          const particleColorHSL = getParticleColor(particle.color);
           
           // Create electromagnetic field effect
           const fieldRadius = 20 + opacity * 30;
@@ -169,8 +182,8 @@ const AnimatedBackground = () => {
             particle.x, particle.y, 0,
             particle.x, particle.y, fieldRadius
           );
-          fieldGradient.addColorStop(0, `hsla(var(--${particle.color}), ${opacity * 0.3})`);
-          fieldGradient.addColorStop(1, `hsla(var(--${particle.color}), 0)`);
+          fieldGradient.addColorStop(0, `hsla(${particleColorHSL}, ${opacity * 0.3})`);
+          fieldGradient.addColorStop(1, `hsla(${particleColorHSL}, 0)`);
           
           ctx.fillStyle = fieldGradient;
           ctx.beginPath();
