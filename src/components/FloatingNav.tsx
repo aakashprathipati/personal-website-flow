@@ -67,7 +67,7 @@ const FloatingNav = () => {
 
       {/* Desktop Floating Nav - horizontal top bar */}
       <nav className="fixed top-0 left-0 right-0 z-50 hidden lg:flex items-center justify-center bg-transparent pt-4">
-        <div className="flex flex-row gap-1.5 p-1.5 bg-background/10 backdrop-blur-md border border-primary/20 rounded-full shadow-neon">
+        <div className="flex flex-row gap-1.5 p-1.5">
           {navItems.map((item, index) => {
             const IconComponent = item.icon;
             const isActive = activeSection === item.href.replace('#', '');
