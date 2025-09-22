@@ -109,11 +109,6 @@ const FloatingNav = () => {
               </Button>
             );
           })}
-
-          {/* Floating sparkle */}
-          <div className="w-14 h-14 flex items-center justify-center animate-float transition-all duration-150 hover:scale-110">
-            <Sparkles className="w-6 h-6 text-warning animate-pulse transition-all duration-150" />
-          </div>
         </div>
       </nav>
 
