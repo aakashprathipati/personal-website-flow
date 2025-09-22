@@ -24,30 +24,45 @@ const FloatingNav = () => {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const sections = ['hero', 'skills', 'experience', 'education', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const sections = ['hero', 'skills', 'experience', 'education', 'contact'];
+          const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+          for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+              const { offsetTop, offsetHeight } = element;
+              if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                setActiveSection(section);
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.replace('#', ''));
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
       setIsOpen(false);
     }
   };
@@ -58,10 +73,10 @@ const FloatingNav = () => {
       <div className="fixed top-6 right-6 z-50 lg:hidden">
         <Button
           size="icon"
-          className="w-14 h-14 brutal-hover bg-primary text-primary-foreground shadow-neon border border-primary/30"
+          className="w-14 h-14 brutal-hover bg-primary text-primary-foreground shadow-neon border border-primary/30 transition-all duration-150 ease-out transform hover:scale-110 active:scale-95"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isOpen ? <X className="w-6 h-6 transition-transform duration-150" /> : <Menu className="w-6 h-6 transition-transform duration-150" />}
         </Button>
       </div>
 
@@ -77,10 +92,10 @@ const FloatingNav = () => {
                 key={index}
                 size="icon"
                 variant={isActive ? 'default' : 'outline'}
-                className={`w-14 h-14 brutal-hover shadow-brutal group relative ${
+                className={`w-14 h-14 brutal-hover shadow-brutal group relative transition-all duration-150 ease-out transform hover:scale-110 active:scale-95 ${
                   isActive 
-                    ? 'bg-primary text-primary-foreground shadow-neon' 
-                    : 'border-2 border-foreground hover:bg-primary hover:text-primary-foreground'
+                    ? 'bg-primary text-primary-foreground shadow-neon animate-pulse' 
+                    : 'border-2 border-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-neon'
                 }`}
                 onClick={() => scrollToSection(item.href)}
                 title={item.label}
@@ -96,8 +111,8 @@ const FloatingNav = () => {
           })}
 
           {/* Floating sparkle */}
-          <div className="w-14 h-14 flex items-center justify-center animate-float">
-            <Sparkles className="w-6 h-6 text-warning animate-pulse" />
+          <div className="w-14 h-14 flex items-center justify-center animate-float transition-all duration-150 hover:scale-110">
+            <Sparkles className="w-6 h-6 text-warning animate-pulse transition-all duration-150" />
           </div>
         </div>
       </nav>
@@ -116,12 +131,12 @@ const FloatingNav = () => {
                   <Button
                     key={index}
                     variant={isActive ? 'default' : 'ghost'}
-                    className={`justify-start gap-3 ${
+                    className={`justify-start gap-3 transition-all duration-150 ease-out transform hover:scale-105 active:scale-95 ${
                       isActive ? 'bg-primary text-primary-foreground' : ''
                     }`}
                     onClick={() => scrollToSection(item.href)}
                   >
-                    <IconComponent className="w-5 h-5" />
+                    <IconComponent className="w-5 h-5 transition-all duration-150" />
                     {item.label}
                   </Button>
                 );
