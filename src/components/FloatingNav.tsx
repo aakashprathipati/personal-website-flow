@@ -10,6 +10,7 @@ import {
   X,
   Sparkles
 } from 'lucide-react';
+import HTMLNotesModal from './HTMLNotesModal';
 
 const navItems = [
   { icon: Home, label: 'Home', href: '#hero' },
@@ -109,6 +110,11 @@ const FloatingNav = () => {
               </Button>
             );
           })}
+
+           {/* Access Notes Modal */}
+           <div className="ml-4 pl-4 border-l border-border/20">
+             <HTMLNotesModal />
+           </div>
         </div>
       </nav>
 
