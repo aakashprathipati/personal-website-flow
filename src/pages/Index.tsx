@@ -17,19 +17,19 @@ const Index = () => {
           <HeroSection />
         </section>
         
-        <section id="skills">
+        <section id="skills" className="py-20">
           <SkillsSection />
         </section>
         
-        <section id="experience">
+        <section id="experience" className="py-20">
           <ExperienceSection />
         </section>
         
-        <section id="education">
+        <section id="education" className="py-20">
           <EducationSection />
         </section>
         
-        <section id="contact">
+        <section id="contact" className="py-20">
           <ContactSection />
         </section>
       </main>

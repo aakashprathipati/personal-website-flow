@@ -8,21 +8,27 @@ import {
   Mail, 
   Menu,
   X,
-  Sparkles
+  Sparkles,
+  FolderOpen,
+  FileText,
+  BookOpen
 } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import HTMLNotesModal from './HTMLNotesModal';
 
 const navItems = [
-  { icon: Home, label: 'Home', href: '#hero' },
-  { icon: Code, label: 'Skills', href: '#skills' },
-  { icon: User, label: 'Experience', href: '#experience' },
-  { icon: GraduationCap, label: 'Education', href: '#education' },
-  { icon: Mail, label: 'Contact', href: '#contact' }
+  { icon: Home, label: 'Home', href: '/', type: 'route' },
+  { icon: FolderOpen, label: 'Projects', href: '/projects', type: 'route' },
+  { icon: FileText, label: 'Cheat Sheets', href: '/cheat-sheets', type: 'route' },
+  { icon: BookOpen, label: 'Blog', href: '/blog', type: 'route' },
+  { icon: Mail, label: 'Contact', href: '#contact', type: 'scroll' }
 ];
 
 const FloatingNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     let ticking = false;
@@ -53,6 +59,23 @@ const FloatingNav = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavigation = (href: string, type: string) => {
+    setIsOpen(false);
+    
+    if (type === 'route') {
+      navigate(href);
+    } else if (type === 'scroll') {
+      // If we're not on the home page, navigate there first
+      if (location.pathname !== '/') {
+        navigate('/');
+        // Wait for navigation to complete before scrolling
+        setTimeout(() => scrollToSection(href), 100);
+      } else {
+        scrollToSection(href);
+      }
+    }
+  };
+
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.replace('#', ''));
     if (element) {
@@ -64,7 +87,6 @@ const FloatingNav = () => {
         top: offsetPosition,
         behavior: 'smooth'
       });
-      setIsOpen(false);
     }
   };
 
@@ -86,7 +108,9 @@ const FloatingNav = () => {
         <div className="flex flex-row gap-1.5 p-1.5">
           {navItems.map((item, index) => {
             const IconComponent = item.icon;
-            const isActive = activeSection === item.href.replace('#', '');
+            const isActive = item.type === 'route' 
+              ? location.pathname === item.href
+              : activeSection === item.href.replace('#', '');
             
             return (
               <Button
@@ -98,7 +122,7 @@ const FloatingNav = () => {
                     ? 'bg-primary text-primary-foreground shadow-neon animate-pulse' 
                     : 'border-2 border-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-neon'
                 }`}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => handleNavigation(item.href, item.type)}
                 title={item.label}
               >
                 <IconComponent className="w-6 h-6" />
@@ -126,7 +150,9 @@ const FloatingNav = () => {
             <div className="flex flex-col gap-4">
               {navItems.map((item, index) => {
                 const IconComponent = item.icon;
-                const isActive = activeSection === item.href.replace('#', '');
+                const isActive = item.type === 'route' 
+                  ? location.pathname === item.href
+                  : activeSection === item.href.replace('#', '');
                 
                 return (
                   <Button
@@ -135,7 +161,7 @@ const FloatingNav = () => {
                     className={`justify-start gap-3 transition-all duration-150 ease-out transform hover:scale-105 active:scale-95 ${
                       isActive ? 'bg-primary text-primary-foreground' : ''
                     }`}
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => handleNavigation(item.href, item.type)}
                   >
                     <IconComponent className="w-5 h-5 transition-all duration-150" />
                     {item.label}
