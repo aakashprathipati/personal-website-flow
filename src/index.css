@@ -2,76 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Neo-Brutalist Memphis Cyberpunk Design System */
+/* Ultra-Modern Cyberpunk 2025 Design System */
 
 @layer base {
   :root {
-    /* Core palette - Y2K Vibrant */
-    --background: 260 60% 8%;
-    --foreground: 50 100% 95%;
+    /* Core palette - Deep Space */
+    --background: 240 15% 6%;
+    --foreground: 180 5% 98%;
 
-    /* Card system - Glossy Y2K inspired */
-    --card: 260 50% 12%;
-    --card-foreground: 50 100% 95%;
-    --card-hover: 180 100% 55%;
+    /* Card system - Neon Glass */
+    --card: 240 12% 10%;
+    --card-foreground: 180 5% 98%;
+    --card-hover: 190 95% 55%;
 
     /* Popover */
-    --popover: 260 50% 12%;
-    --popover-foreground: 50 100% 95%;
+    --popover: 240 12% 10%;
+    --popover-foreground: 180 5% 98%;
 
-    /* Primary - Bright Cyan */
-    --primary: 180 100% 55%;
-    --primary-foreground: 260 60% 8%;
-    --primary-glow: 180 100% 75%;
+    /* Primary - Electric Blue */
+    --primary: 190 95% 55%;
+    --primary-foreground: 240 15% 6%;
+    --primary-glow: 190 100% 70%;
 
-    /* Secondary - Hot Magenta */
-    --secondary: 320 100% 65%;
-    --secondary-foreground: 260 60% 8%;
-    --secondary-glow: 320 100% 85%;
+    /* Secondary - Neon Purple */
+    --secondary: 270 80% 65%;
+    --secondary-foreground: 240 15% 6%;
+    --secondary-glow: 270 100% 80%;
 
-    /* Accent - Lime Green */
-    --accent: 90 100% 55%;
-    --accent-foreground: 260 60% 8%;
-    --accent-glow: 90 100% 75%;
+    /* Accent - Cyber Pink */
+    --accent: 330 85% 60%;
+    --accent-foreground: 240 15% 6%;
+    --accent-glow: 330 100% 75%;
 
-    /* Warning - Electric Orange */
-    --warning: 30 100% 60%;
-    --warning-foreground: 260 60% 8%;
+    /* Warning - Solar Orange */
+    --warning: 25 95% 58%;
+    --warning-foreground: 240 15% 6%;
 
-    /* Destructive - Hot Red */
-    --destructive: 0 100% 65%;
+    /* Destructive - Laser Red */
+    --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Muted - Purple grays */
-    --muted: 260 30% 20%;
-    --muted-foreground: 260 10% 75%;
+    /* Muted - Deep grays */
+    --muted: 240 8% 18%;
+    --muted-foreground: 240 5% 70%;
 
     /* Borders and inputs */
-    --border: 280 50% 35%;
-    --input: 260 50% 15%;
-    --ring: 180 100% 55%;
+    --border: 240 10% 25%;
+    --input: 240 12% 12%;
+    --ring: 190 95% 55%;
 
-    /* Y2K radius - more rounded */
-    --radius: 1rem;
+    /* Modern radius */
+    --radius: 0.75rem;
 
-    /* Y2K gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
-    --gradient-neon: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--warning)), hsl(var(--secondary)));
-    --gradient-brutal: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-radial: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.2) 0%, transparent 70%);
+    /* Cyberpunk gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-neon: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary)));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(240 12% 10%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.6), hsl(var(--card) / 0.3));
 
-    /* Enhanced Y2K shadows */
-    --shadow-neon: 0 0 40px hsl(var(--primary) / 0.8), 0 0 70px hsl(var(--primary) / 0.4), 0 0 100px hsl(var(--secondary) / 0.3);
-    --shadow-brutal: 6px 6px 0px hsl(var(--foreground) / 0.9);
-    --shadow-memphis: 4px 4px 0px hsl(var(--secondary)), 8px 8px 0px hsl(var(--accent));
-    --shadow-glow-primary: 0 0 50px hsl(var(--primary) / 0.9);
-    --shadow-glow-secondary: 0 0 50px hsl(var(--secondary) / 0.9);
-    --shadow-glow-accent: 0 0 50px hsl(var(--accent) / 0.9);
+    /* Modern shadows */
+    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.5), 0 0 60px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 8px 32px hsl(var(--primary) / 0.25);
+    --shadow-soft: 0 4px 24px hsl(240 15% 3% / 0.5);
+    --shadow-xl: 0 20px 60px hsl(240 15% 3% / 0.8);
 
     /* Animation timings */
-    --transition-brutal: all 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -91,18 +89,17 @@
   }
 
   .dark {
-    /* Y2K Vibrant Dark theme */
-    --background: 260 60% 8%;
-    --foreground: 50 100% 95%;
-    --card: 260 50% 12%;
-    --card-foreground: 50 100% 95%;
-    --popover: 260 50% 12%;
-    --popover-foreground: 50 100% 95%;
-    --muted: 260 30% 20%;
-    --muted-foreground: 260 10% 75%;
-    --border: 280 50% 35%;
-    --input: 260 50% 15%;
-    --shadow-neon: 0 0 40px hsl(var(--primary) / 0.8), 0 0 70px hsl(var(--primary) / 0.4);
+    /* Dark theme matches root */
+    --background: 240 15% 6%;
+    --foreground: 180 5% 98%;
+    --card: 240 12% 10%;
+    --card-foreground: 180 5% 98%;
+    --popover: 240 12% 10%;
+    --popover-foreground: 180 5% 98%;
+    --muted: 240 8% 18%;
+    --muted-foreground: 240 5% 70%;
+    --border: 240 10% 25%;
+    --input: 240 12% 12%;
   }
 }
 
@@ -113,22 +110,27 @@
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: 
-      repeating-linear-gradient(45deg, transparent, transparent 10px, hsl(var(--primary) / 0.03) 10px, hsl(var(--primary) / 0.03) 20px),
-      repeating-linear-gradient(-45deg, transparent, transparent 10px, hsl(var(--secondary) / 0.03) 10px, hsl(var(--secondary) / 0.03) 20px),
-      radial-gradient(circle at 20% 30%, hsl(var(--primary) / 0.15) 0%, transparent 40%), 
-      radial-gradient(circle at 80% 70%, hsl(var(--secondary) / 0.15) 0%, transparent 40%), 
-      radial-gradient(circle at 50% 50%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 20%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 80%, hsl(var(--secondary) / 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, hsl(var(--accent) / 0.04) 0%, transparent 60%),
       hsl(var(--background));
   }
 
-  /* Y2K glitch effect */
+  /* Neon glow text */
+  .neon-text {
+    color: hsl(var(--primary));
+    text-shadow: 
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 20px hsl(var(--primary) / 0.5),
+      0 0 40px hsl(var(--primary) / 0.3);
+  }
+
   .glitch {
     position: relative;
-    color: hsl(var(--primary));
-    font-weight: 900;
-    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+    color: hsl(var(--foreground));
+    font-weight: 800;
   }
 
   .glitch::before,
@@ -139,51 +141,37 @@
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0.8;
   }
 
   .glitch::before {
-    animation: glitch-anim 2s infinite linear alternate-reverse;
-    color: hsl(var(--secondary));
+    animation: glitch-1 0.3s infinite;
+    color: hsl(var(--primary));
     z-index: -1;
   }
 
   .glitch::after {
-    animation: glitch-anim2 1s infinite linear alternate-reverse;
+    animation: glitch-2 0.3s infinite;
     color: hsl(var(--accent));
     z-index: -2;
   }
 
-  @keyframes glitch-anim {
-    0% { clip: rect(42px, 9999px, 44px, 0); transform: skew(0.85deg); }
-    5% { clip: rect(12px, 9999px, 59px, 0); transform: skew(0.93deg); }
-    10% { clip: rect(70px, 9999px, 05px, 0); transform: skew(-0.85deg); }
-    15% { clip: rect(25px, 9999px, 99px, 0); transform: skew(0.26deg); }
-    20% { clip: rect(55px, 9999px, 16px, 0); transform: skew(-0.12deg); }
-    25% { clip: rect(96px, 9999px, 62px, 0); transform: skew(0.37deg); }
-    30% { clip: rect(82px, 9999px, 27px, 0); transform: skew(0.15deg); }
-    35% { clip: rect(28px, 9999px, 35px, 0); transform: skew(-0.98deg); }
-    40% { clip: rect(21px, 9999px, 81px, 0); transform: skew(0.81deg); }
-    45% { clip: rect(67px, 9999px, 40px, 0); transform: skew(0.39deg); }
-    50% { clip: rect(18px, 9999px, 93px, 0); transform: skew(-0.6deg); }
-    55% { clip: rect(67px, 9999px, 73px, 0); transform: skew(0.4deg); }
-    60% { clip: rect(99px, 9999px, 17px, 0); transform: skew(0.13deg); }
-    65% { clip: rect(86px, 9999px, 74px, 0); transform: skew(-0.42deg); }
-    70% { clip: rect(34px, 9999px, 43px, 0); transform: skew(-0.69deg); }
-    75% { clip: rect(29px, 9999px, 88px, 0); transform: skew(0.77deg); }
-    80% { clip: rect(5px, 9999px, 26px, 0); transform: skew(-0.83deg); }
-    85% { clip: rect(47px, 9999px, 98px, 0); transform: skew(-0.32deg); }
-    90% { clip: rect(53px, 9999px, 32px, 0); transform: skew(0.18deg); }
-    95% { clip: rect(13px, 9999px, 85px, 0); transform: skew(-0.45deg); }
-    100% { clip: rect(87px, 9999px, 29px, 0); transform: skew(-0.01deg); }
+  @keyframes glitch-1 {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
   }
 
-  @keyframes glitch-anim2 {
-    0% { clip: rect(65px, 9999px, 100px, 0); transform: skew(0.2deg); }
-    20% { clip: rect(40px, 9999px, 30px, 0); transform: skew(-0.4deg); }
-    40% { clip: rect(20px, 9999px, 99px, 0); transform: skew(0.8deg); }
-    60% { clip: rect(75px, 9999px, 15px, 0); transform: skew(-0.5deg); }
-    80% { clip: rect(10px, 9999px, 85px, 0); transform: skew(0.3deg); }
-    100% { clip: rect(50px, 9999px, 45px, 0); transform: skew(-0.1deg); }
+  @keyframes glitch-2 {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, -2px); }
+    40% { transform: translate(2px, 2px); }
+    60% { transform: translate(-2px, -2px); }
+    80% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0); }
   }
 
   /* Floating animation */
@@ -192,96 +180,113 @@
   }
 
   @keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); }
-    33% { transform: translateY(-10px) rotate(1deg); }
-    66% { transform: translateY(5px) rotate(-1deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
   }
 
-  /* Pulse neon */
-  .pulse-neon {
-    animation: pulse-neon 2s ease-in-out infinite alternate;
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 
-  @keyframes pulse-neon {
-    from { box-shadow: var(--shadow-neon); }
-    to { box-shadow: 0 0 40px hsl(var(--primary) / 0.8), 0 0 60px hsl(var(--secondary) / 0.4); }
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.8);
+      transform: scale(1.05);
+    }
   }
 
-  /* Brutal hover */
-  .brutal-hover {
-    transition: var(--transition-brutal);
-    transform: translateY(0px);
-    box-shadow: var(--shadow-brutal);
-    border: 2px solid hsl(var(--border));
+  /* Glass card */
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition-smooth);
   }
 
-  .brutal-hover:hover {
-    transform: translateY(-4px) rotate(-1deg);
-    box-shadow: 10px 10px 0px hsl(var(--primary)), 12px 12px 0px hsl(var(--secondary));
-    border-color: hsl(var(--primary));
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: hsl(var(--primary) / 0.5);
   }
 
-  /* Memphis shapes */
-  .memphis-shape {
+  /* Slide in animation */
+  .slide-in {
+    animation: slide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade in animation */
+  .fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Cyber border animation */
+  .cyber-border {
+    position: relative;
+    border: 1px solid hsl(var(--border));
+  }
+
+  .cyber-border::before {
+    content: '';
     position: absolute;
-    animation: memphis-float 8s ease-in-out infinite;
+    inset: 0;
+    border: 2px solid hsl(var(--primary));
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
   }
 
-  @keyframes memphis-float {
-    0%, 100% { transform: rotate(0deg) translateY(0px); }
-    25% { transform: rotate(90deg) translateY(-20px); }
-    50% { transform: rotate(180deg) translateY(10px); }
-    75% { transform: rotate(270deg) translateY(-10px); }
+  .cyber-border:hover::before {
+    opacity: 1;
+    animation: border-pulse 1.5s ease-in-out infinite;
   }
 
-  /* Color changing - Y2K style */
-  .color-shift {
-    animation: color-shift 5s ease-in-out infinite;
+  @keyframes border-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
   }
 
-  @keyframes color-shift {
-    0% { background: hsl(var(--primary)); box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
-    20% { background: hsl(var(--accent)); box-shadow: 0 0 30px hsl(var(--accent) / 0.6); }
-    40% { background: hsl(var(--secondary)); box-shadow: 0 0 30px hsl(var(--secondary) / 0.6); }
-    60% { background: hsl(var(--warning)); box-shadow: 0 0 30px hsl(var(--warning) / 0.6); }
-    80% { background: hsl(var(--destructive)); box-shadow: 0 0 30px hsl(var(--destructive) / 0.6); }
-    100% { background: hsl(var(--primary)); box-shadow: 0 0 30px hsl(var(--primary) / 0.6); }
+  /* Neon underline */
+  .neon-underline {
+    position: relative;
+    display: inline-block;
   }
 
-  /* Particle connection lines */
-  .particle-line {
+  .neon-underline::after {
+    content: '';
     position: absolute;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
-    transform-origin: left center;
-    animation: pulse-line 2s ease-in-out infinite;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
 
-  @keyframes pulse-line {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.8; }
-  }
-
-  /* Morphing shapes */
-  .morph-shape {
-    animation: morph 8s ease-in-out infinite;
-  }
-
-  @keyframes morph {
-    0%, 100% { border-radius: 50%; transform: rotate(0deg) scale(1); }
-    25% { border-radius: 0%; transform: rotate(90deg) scale(1.2); }
-    50% { border-radius: 25%; transform: rotate(180deg) scale(0.8); }
-    75% { border-radius: 10%; transform: rotate(270deg) scale(1.1); }
-  }
-
-  /* Interactive glow */
-  .interactive-glow {
-    transition: all 0.3s ease;
-  }
-
-  .interactive-glow:hover {
-    box-shadow: var(--shadow-glow-primary);
-    transform: scale(1.05);
+  .neon-underline:hover::after {
+    transform: scaleX(1);
   }
 }
