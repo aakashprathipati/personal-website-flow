@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -130,6 +131,8 @@ const cheatSheetsData = [
 const categories = ["All", "Frontend", "Backend", "Database", "Tools", "AI/ML", "DevOps", "Cloud"];
 
 const CheatSheets = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   const handleDownload = (downloadUrl: string, title: string) => {
     // Create a temporary link element and trigger download
     const link = document.createElement('a');
@@ -139,6 +142,10 @@ const CheatSheets = () => {
     link.click();
     document.body.removeChild(link);
   };
+
+  const filteredSheets = selectedCategory === "All" 
+    ? cheatSheetsData 
+    : cheatSheetsData.filter(sheet => sheet.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background relative">
@@ -162,8 +169,9 @@ const CheatSheets = () => {
             {categories.map((category) => (
               <Button 
                 key={category} 
-                variant="outline" 
+                variant={selectedCategory === category ? "default" : "outline"}
                 size="sm"
+                onClick={() => setSelectedCategory(category)}
                 className="transition-all duration-200 hover:scale-105"
               >
                 {category}
@@ -173,7 +181,7 @@ const CheatSheets = () => {
 
           {/* Cheat Sheets Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-            {cheatSheetsData.map((sheet) => {
+            {filteredSheets.map((sheet) => {
               const IconComponent = sheet.icon;
               return (
                 <Card key={sheet.id} className="group brutal-hover bg-card/50 backdrop-blur-sm border-2 border-border hover:border-primary/50 transition-all duration-300">

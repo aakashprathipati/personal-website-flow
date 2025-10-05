@@ -14,7 +14,6 @@ import {
   BookOpen
 } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import HTMLNotesModal from './HTMLNotesModal';
 
 const navItems = [
   { icon: Home, label: 'Home', href: '/', type: 'route' },
@@ -134,11 +133,6 @@ const FloatingNav = () => {
               </Button>
             );
           })}
-
-           {/* Access Notes Modal */}
-           <div className="ml-4 pl-4 border-l border-border/20">
-             <HTMLNotesModal />
-           </div>
         </div>
       </nav>
 
