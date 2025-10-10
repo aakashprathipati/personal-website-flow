@@ -114,14 +114,6 @@ const HeroSection = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                
-                {/* Floating badge */}
-                <div className="absolute -bottom-4 -right-4 glass-card px-6 py-3 rounded-full border-2 border-primary/50 float">
-                  <div className="flex items-center gap-2">
-                    <Code2 className="w-5 h-5 text-primary" />
-                    <span className="font-semibold">Full Stack</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
