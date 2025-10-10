@@ -10,7 +10,7 @@ const education = [
     location: "Vijayawada, India",
     focus: "Computer Science Engineering",
     description: "Comprehensive B.Tech program focusing on practical problem-solving and emerging technologies",
-    highlights: ["AI & Machine Learning", "Cybersecurity Research", "Full-stack Development", "Data Science"]
+    highlights: ["AI & Machine Learning", "Software Development", "Full-stack Development", "Data Science"]
   },
   {
     degree: "Bachelor of Business Administration",

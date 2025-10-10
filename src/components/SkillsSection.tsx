@@ -8,11 +8,6 @@ const skills = [
     items: ["Deep Learning", "Natural Language Processing", "Computer Vision"]
   },
   {
-    category: "Cybersecurity",
-    icon: Shield,
-    items: ["Penetration Testing", "Threat Intelligence", "Risk Assessment"]
-  },
-  {
     category: "Blockchain & Web3",
     icon: Blocks,
     items: ["Smart Contracts", "DApps Development", "Tokenomics"]

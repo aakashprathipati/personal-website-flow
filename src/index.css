@@ -109,13 +109,15 @@
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: 
-      radial-gradient(ellipse at 10% 20%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse at 90% 80%, hsl(var(--secondary) / 0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 50%, hsl(var(--accent) / 0.04) 0%, transparent 60%),
-      hsl(var(--background));
+    background: hsl(var(--background));
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   /* Neon glow text */
@@ -203,14 +205,15 @@
   /* Glass card */
   .glass-card {
     background: var(--gradient-glass);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
     border: 1px solid hsl(var(--border) / 0.3);
     box-shadow: var(--shadow-glow);
     transition: var(--transition-smooth);
+    will-change: transform;
   }
 
   .glass-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
     border-color: hsl(var(--primary) / 0.5);
   }
