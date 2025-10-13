@@ -20,7 +20,13 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 Hi, I'm{' '}
-                <span className="neon-text glitch" data-text="Aakash">
+                <span 
+                  className="glitch bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
+                  style={{
+                    filter: 'drop-shadow(0 0 20px hsl(var(--primary) / 0.6)) drop-shadow(0 0 40px hsl(var(--secondary) / 0.4))'
+                  }}
+                  data-text="Aakash"
+                >
                   Aakash
                 </span>
               </h1>
