@@ -5,15 +5,6 @@ import profileImage from '@/assets/profile-photo.png';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Cyberpunk neon background with multi-color glows */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
-        <div className="absolute top-20 left-20 w-[600px] h-[600px] bg-gradient-to-br from-primary/40 to-transparent rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-[700px] h-[700px] bg-gradient-to-tl from-secondary/40 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-accent/40 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/3 left-1/4 w-[500px] h-[500px] bg-gradient-to-tr from-warning/30 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-to-br from-accent/25 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
-      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
