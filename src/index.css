@@ -6,65 +6,65 @@
 
 @layer base {
   :root {
-    /* Core palette - Deep Space */
-    --background: 240 15% 6%;
-    --foreground: 180 5% 98%;
+    /* Core palette - Matrix Black */
+    --background: 0 0% 0%;
+    --foreground: 120 100% 95%;
 
-    /* Card system - Neon Glass */
-    --card: 240 12% 10%;
-    --card-foreground: 180 5% 98%;
-    --card-hover: 190 95% 55%;
+    /* Card system - Dark Matrix */
+    --card: 120 20% 8%;
+    --card-foreground: 120 100% 95%;
+    --card-hover: 120 100% 50%;
 
     /* Popover */
-    --popover: 240 12% 10%;
-    --popover-foreground: 180 5% 98%;
+    --popover: 120 20% 8%;
+    --popover-foreground: 120 100% 95%;
 
-    /* Primary - Electric Blue */
-    --primary: 190 95% 55%;
-    --primary-foreground: 240 15% 6%;
-    --primary-glow: 190 100% 70%;
+    /* Primary - Matrix Green */
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 120 100% 60%;
 
-    /* Secondary - Neon Purple */
-    --secondary: 270 80% 65%;
-    --secondary-foreground: 240 15% 6%;
-    --secondary-glow: 270 100% 80%;
+    /* Secondary - Dark Green */
+    --secondary: 120 80% 25%;
+    --secondary-foreground: 120 100% 95%;
+    --secondary-glow: 120 100% 35%;
 
-    /* Accent - Cyber Pink */
-    --accent: 330 85% 60%;
-    --accent-foreground: 240 15% 6%;
-    --accent-glow: 330 100% 75%;
+    /* Accent - Bright Matrix Green */
+    --accent: 120 100% 40%;
+    --accent-foreground: 0 0% 0%;
+    --accent-glow: 120 100% 50%;
 
-    /* Warning - Solar Orange */
-    --warning: 25 95% 58%;
-    --warning-foreground: 240 15% 6%;
+    /* Warning - Matrix Yellow */
+    --warning: 60 100% 50%;
+    --warning-foreground: 0 0% 0%;
 
-    /* Destructive - Laser Red */
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 0 0% 100%;
+    /* Destructive - Matrix Red */
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 0%;
 
-    /* Muted - Deep grays */
-    --muted: 240 8% 18%;
-    --muted-foreground: 240 5% 70%;
+    /* Muted - Dark Matrix Gray */
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 20% 60%;
 
     /* Borders and inputs */
-    --border: 240 10% 25%;
-    --input: 240 12% 12%;
-    --ring: 190 95% 55%;
+    --border: 120 50% 20%;
+    --input: 120 30% 10%;
+    --ring: 120 100% 50%;
 
     /* Modern radius */
     --radius: 0.75rem;
 
-    /* Cyberpunk gradients */
+    /* Matrix gradients */
     --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-neon: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary)));
-    --gradient-hero: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(240 12% 10%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.6), hsl(var(--card) / 0.3));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(120 30% 5%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--card) / 0.4));
 
-    /* Modern shadows */
-    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.5), 0 0 60px hsl(var(--primary) / 0.2);
-    --shadow-glow: 0 8px 32px hsl(var(--primary) / 0.25);
-    --shadow-soft: 0 4px 24px hsl(240 15% 3% / 0.5);
-    --shadow-xl: 0 20px 60px hsl(240 15% 3% / 0.8);
+    /* Matrix shadows - Heavy green glow */
+    --shadow-neon: 0 0 40px hsl(var(--primary) / 0.8), 0 0 80px hsl(var(--primary) / 0.5), 0 0 120px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 50px hsl(var(--primary) / 0.6), 0 8px 40px hsl(var(--primary) / 0.4);
+    --shadow-soft: 0 4px 30px hsl(120 100% 20% / 0.8);
+    --shadow-xl: 0 0 60px hsl(var(--primary) / 0.7), 0 20px 80px hsl(120 100% 20% / 1);
 
     /* Animation timings */
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -89,17 +89,17 @@
   }
 
   .dark {
-    /* Dark theme matches root */
-    --background: 240 15% 6%;
-    --foreground: 180 5% 98%;
-    --card: 240 12% 10%;
-    --card-foreground: 180 5% 98%;
-    --popover: 240 12% 10%;
-    --popover-foreground: 180 5% 98%;
-    --muted: 240 8% 18%;
-    --muted-foreground: 240 5% 70%;
-    --border: 240 10% 25%;
-    --input: 240 12% 12%;
+    /* Dark theme matches root - Matrix style */
+    --background: 0 0% 0%;
+    --foreground: 120 100% 95%;
+    --card: 120 20% 8%;
+    --card-foreground: 120 100% 95%;
+    --popover: 120 20% 8%;
+    --popover-foreground: 120 100% 95%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 20% 60%;
+    --border: 120 50% 20%;
+    --input: 120 30% 10%;
   }
 }
 
@@ -120,13 +120,15 @@
     scroll-behavior: smooth;
   }
 
-  /* Neon glow text */
+  /* Matrix neon glow text - Heavy */
   .neon-text {
     color: hsl(var(--primary));
     text-shadow: 
-      0 0 10px hsl(var(--primary) / 0.8),
-      0 0 20px hsl(var(--primary) / 0.5),
-      0 0 40px hsl(var(--primary) / 0.3);
+      0 0 15px hsl(var(--primary) / 1),
+      0 0 30px hsl(var(--primary) / 0.8),
+      0 0 50px hsl(var(--primary) / 0.6),
+      0 0 80px hsl(var(--primary) / 0.4);
+    font-weight: 700;
   }
 
   .glitch {
@@ -202,20 +204,20 @@
     }
   }
 
-  /* Glass card */
+  /* Matrix glass card - Heavy glow */
   .glass-card {
     background: var(--gradient-glass);
     backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.3);
+    border: 2px solid hsl(var(--primary) / 0.5);
     box-shadow: var(--shadow-glow);
     transition: var(--transition-smooth);
     will-change: transform;
   }
 
   .glass-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-xl);
-    border-color: hsl(var(--primary) / 0.5);
+    border-color: hsl(var(--primary) / 1);
   }
 
   /* Slide in animation */
