@@ -1,71 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Ultra-Modern Cyberpunk 2025 Design System */
+/* Matrix Binary Theme 2025 Design System */
 
 @layer base {
   :root {
-    /* Core palette - Dark Cyberpunk */
-    --background: 220 25% 8%;
-    --foreground: 180 100% 95%;
+    /* Core palette - Matrix Dark */
+    --background: 0 0% 4%;
+    --foreground: 120 100% 70%;
 
-    /* Card system - Cyberpunk Glass */
-    --card: 220 20% 12%;
-    --card-foreground: 180 100% 95%;
-    --card-hover: 160 100% 50%;
+    /* Card system - Matrix Glass */
+    --card: 0 0% 6%;
+    --card-foreground: 120 100% 70%;
+    --card-hover: 120 100% 50%;
 
     /* Popover */
-    --popover: 220 20% 12%;
-    --popover-foreground: 180 100% 95%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 120 100% 70%;
 
-    /* Primary - Lite Neon Green */
-    --primary: 160 100% 50%;
-    --primary-foreground: 220 25% 8%;
-    --primary-glow: 160 100% 60%;
+    /* Primary - Matrix Green */
+    --primary: 120 100% 45%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 120 100% 55%;
 
-    /* Secondary - Electric Blue */
-    --secondary: 195 100% 50%;
-    --secondary-foreground: 220 25% 8%;
-    --secondary-glow: 195 100% 60%;
+    /* Secondary - Darker Matrix Green */
+    --secondary: 120 100% 30%;
+    --secondary-foreground: 120 100% 90%;
+    --secondary-glow: 120 100% 40%;
 
-    /* Accent - Hot Pink */
-    --accent: 330 100% 60%;
-    --accent-foreground: 220 25% 8%;
-    --accent-glow: 330 100% 70%;
+    /* Accent - Bright Matrix Green */
+    --accent: 120 100% 55%;
+    --accent-foreground: 0 0% 0%;
+    --accent-glow: 120 100% 65%;
 
-    /* Warning - Electric Yellow */
-    --warning: 55 100% 60%;
-    --warning-foreground: 220 25% 8%;
+    /* Warning - Matrix Yellow */
+    --warning: 45 100% 50%;
+    --warning-foreground: 0 0% 0%;
 
-    /* Destructive - Neon Red */
-    --destructive: 0 100% 60%;
-    --destructive-foreground: 220 25% 8%;
+    /* Destructive - Matrix Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    /* Muted - Dark Cyberpunk */
-    --muted: 220 15% 20%;
-    --muted-foreground: 180 20% 70%;
+    /* Muted - Dark Matrix */
+    --muted: 120 20% 15%;
+    --muted-foreground: 120 60% 50%;
 
     /* Borders and inputs */
-    --border: 180 50% 30%;
-    --input: 220 20% 15%;
-    --ring: 160 100% 50%;
+    --border: 120 40% 20%;
+    --input: 120 40% 20%;
+    --ring: 120 100% 45%;
 
     /* Modern radius */
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Cyberpunk gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-neon: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--warning)));
-    --gradient-hero: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 30% 10%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.7), hsl(var(--card) / 0.3));
-    --gradient-rainbow: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)), hsl(var(--warning)));
+    /* Matrix gradients */
+    --gradient-cyber: linear-gradient(180deg, hsl(120 100% 20%), hsl(120 100% 40%));
+    --gradient-neon: linear-gradient(135deg, hsl(120 100% 30%), hsl(120 100% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(120 20% 8%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--card) / 0.6), hsl(var(--card) / 0.3));
+    --gradient-rainbow: linear-gradient(135deg, hsl(120 100% 30%), hsl(120 100% 45%), hsl(120 100% 60%));
 
-    /* Cyberpunk shadows - Multi-color glows */
-    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--secondary) / 0.4), 0 0 90px hsl(var(--accent) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.5), 0 8px 30px hsl(var(--secondary) / 0.3);
-    --shadow-soft: 0 4px 30px hsl(160 100% 50% / 0.4);
-    --shadow-xl: 0 0 50px hsl(var(--primary) / 0.6), 0 20px 70px hsl(var(--secondary) / 0.5), 0 30px 90px hsl(var(--accent) / 0.3);
+    /* Matrix shadows - Green glows */
+    --shadow-neon: 0 0 20px hsl(120 100% 40% / 0.5);
+    --shadow-glow: 0 0 40px hsl(120 100% 50% / 0.6);
+    --shadow-soft: 0 4px 30px hsl(120 100% 40% / 0.3);
+    --shadow-xl: 0 0 50px hsl(120 100% 45% / 0.5), 0 20px 70px hsl(120 100% 40% / 0.4);
 
     /* Animation timings */
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -90,17 +92,24 @@
   }
 
   .dark {
-    /* Dark theme matches root - Cyberpunk style */
-    --background: 220 25% 8%;
-    --foreground: 180 100% 95%;
-    --card: 220 20% 12%;
-    --card-foreground: 180 100% 95%;
-    --popover: 220 20% 12%;
-    --popover-foreground: 180 100% 95%;
-    --muted: 220 15% 20%;
-    --muted-foreground: 180 20% 70%;
-    --border: 180 50% 30%;
-    --input: 220 20% 15%;
+    /* Dark theme - Matrix style */
+    --background: 0 0% 2%;
+    --foreground: 120 100% 75%;
+    --card: 0 0% 4%;
+    --card-foreground: 120 100% 75%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 120 100% 75%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 120 100% 35%;
+    --secondary-foreground: 120 100% 95%;
+    --muted: 120 20% 12%;
+    --muted-foreground: 120 60% 55%;
+    --accent: 120 100% 60%;
+    --accent-foreground: 0 0% 0%;
+    --border: 120 40% 15%;
+    --input: 120 40% 15%;
+    --ring: 120 100% 50%;
   }
 }
 
@@ -111,7 +120,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     background: hsl(var(--background));
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -121,15 +130,19 @@
     scroll-behavior: smooth;
   }
 
-  /* Matrix neon glow text - Heavy */
-  .neon-text {
+  /* Matrix text glow */
+  .matrix-text {
     color: hsl(var(--primary));
     text-shadow: 
-      0 0 15px hsl(var(--primary) / 1),
-      0 0 30px hsl(var(--primary) / 0.8),
-      0 0 50px hsl(var(--primary) / 0.6),
-      0 0 80px hsl(var(--primary) / 0.4);
-    font-weight: 700;
+      0 0 10px hsl(var(--primary) / 0.8),
+      0 0 20px hsl(var(--primary) / 0.6),
+      0 0 30px hsl(var(--primary) / 0.4);
+    animation: matrix-flicker 0.1s infinite alternate;
+  }
+
+  @keyframes matrix-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
   }
 
   .glitch {
@@ -205,20 +218,24 @@
     }
   }
 
-  /* Matrix glass card - Heavy glow */
+  /* Matrix glass card */
   .glass-card {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(12px);
-    border: 2px solid hsl(var(--primary) / 0.5);
-    box-shadow: var(--shadow-glow);
+    background: hsl(var(--card) / 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--primary) / 0.2);
+    box-shadow: 
+      0 0 20px hsl(var(--primary) / 0.1),
+      inset 0 0 20px hsl(var(--primary) / 0.05);
     transition: var(--transition-smooth);
     will-change: transform;
   }
 
   .glass-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-xl);
-    border-color: hsl(var(--primary) / 1);
+    transform: translateY(-2px);
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 
+      0 0 30px hsl(var(--primary) / 0.3),
+      inset 0 0 30px hsl(var(--primary) / 0.1);
   }
 
   /* Slide in animation */
@@ -247,52 +264,39 @@
     to { opacity: 1; }
   }
 
-  /* Cyber border animation */
-  .cyber-border {
+  /* Matrix border animation */
+  .matrix-border {
     position: relative;
-    border: 1px solid hsl(var(--border));
+    border: 1px solid hsl(var(--primary) / 0.3);
+    transition: all var(--transition-smooth);
   }
 
-  .cyber-border::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 2px solid hsl(var(--primary));
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
+  .matrix-border:hover {
+    border-color: hsl(var(--primary) / 0.8);
+    box-shadow: 
+      0 0 20px hsl(var(--primary) / 0.4),
+      inset 0 0 20px hsl(var(--primary) / 0.1);
   }
 
-  .cyber-border:hover::before {
-    opacity: 1;
-    animation: border-pulse 1.5s ease-in-out infinite;
-  }
-
-  @keyframes border-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-  }
-
-  /* Neon underline */
-  .neon-underline {
+  /* Matrix underline */
+  .matrix-underline {
     position: relative;
     display: inline-block;
   }
 
-  .neon-underline::after {
+  .matrix-underline::after {
     content: '';
     position: absolute;
     bottom: -2px;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
-    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
+    background: hsl(var(--primary));
+    box-shadow: 0 0 10px hsl(var(--primary));
+    transition: width var(--transition-smooth);
   }
 
-  .neon-underline:hover::after {
-    transform: scaleX(1);
+  .matrix-underline:hover::after {
+    width: 100%;
   }
 }
