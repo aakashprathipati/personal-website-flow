@@ -23,7 +23,7 @@ const HeroSection = () => {
                 <span 
                   className="glitch bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
                   style={{
-                    filter: 'drop-shadow(0 0 20px hsl(var(--primary) / 0.6)) drop-shadow(0 0 40px hsl(var(--secondary) / 0.4))'
+                    filter: 'drop-shadow(0 0 10px hsl(var(--primary) / 0.3)) drop-shadow(0 0 20px hsl(var(--secondary) / 0.2))'
                   }}
                   data-text="Aakash"
                 >
