@@ -21,7 +21,10 @@ const HeroSection = () => {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 Hi, I'm{' '}
                 <span 
-                  className="glitch matrix-text"
+                  className="glitch bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
+                  style={{
+                    filter: 'drop-shadow(0 0 10px hsl(var(--primary) / 0.3)) drop-shadow(0 0 20px hsl(var(--secondary) / 0.2))'
+                  }}
                   data-text="Aakash"
                 >
                   Aakash
@@ -52,7 +55,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="matrix-border px-8 h-12 text-base font-semibold"
+                className="cyber-border px-8 h-12 text-base font-semibold"
                 asChild
               >
                 <a href={`/aakashp-resume.pdf?v=${Date.now()}`} download="Aakash_Prathipati_Resume.pdf">
@@ -66,7 +69,7 @@ const HeroSection = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="matrix-border hover:bg-primary/10"
+                className="cyber-border hover:bg-primary/10"
                 asChild
               >
                 <a href="https://github.com/aakashprathipati" target="_blank" rel="noopener noreferrer">
@@ -76,7 +79,7 @@ const HeroSection = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="matrix-border hover:bg-primary/10"
+                className="cyber-border hover:bg-primary/10"
                 asChild
               >
                 <a href="https://www.linkedin.com/in/aakash-prathipati-741b18347/" target="_blank" rel="noopener noreferrer">
@@ -86,7 +89,7 @@ const HeroSection = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="matrix-border hover:bg-primary/10"
+                className="cyber-border hover:bg-primary/10"
                 asChild
               >
                 <a href="mailto:aakashprathipaticore@gmail.com">
@@ -100,7 +103,7 @@ const HeroSection = () => {
           <div className="flex justify-center lg:justify-end fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="relative group">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-cyber rounded-2xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
               
               {/* Image container */}
               <div className="relative">
